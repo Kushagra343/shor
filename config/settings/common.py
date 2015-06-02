@@ -39,6 +39,8 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'allauth.socialaccount.providers.facebook', #registration
+    'rest_framework', # django rest framework
 )
 
 # Apps specific for this project go here.
@@ -102,7 +104,8 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres://localhost/shor"),
+    # 'default': env.db("DATABASE_URL", default="postgres://localhost/shor"),
+    'default': env.db("DATABASE_URL", default="postgres://shoruser:shorpass@localhost/shordb"), 
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -249,3 +252,11 @@ LOGGING = {
 }
 
 # Your common stuff: Below this line define 3rd party library settings
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email', 'publish_stream'],
+        'METHOD': 'js_sdk'  # instead of 'oauth2'
+    }
+}
