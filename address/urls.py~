@@ -1,0 +1,5 @@
+from django.conf.urls import patterns, url
+
+urlpatterns = patterns('',
+    url(r'^address_detail/(?P<pk>[0-9]+)$', 'address.views.address_detail', name='address_detail'),
+)
