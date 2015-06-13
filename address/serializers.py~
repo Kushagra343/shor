@@ -1,19 +1,19 @@
 from rest_framework import serializers
 from .models import Address
-from .models import Address_detail
+from .models import Attributes
 
 
 class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Flat
+        model = Address
         fields = ('address', 'latitude','longitude')
 
 
-class AddressDetailSerializer(serializers.ModelSerializer):
+class AttributesSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Hostel
+        model = Address_attributes
         fields = ('address','property_type','attributes')
 
 

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Address
-from .models import Address_detail
+from .models import Attributes
 
 
 class AddressSerializer(serializers.ModelSerializer):
@@ -10,10 +10,10 @@ class AddressSerializer(serializers.ModelSerializer):
         fields = ('address', 'latitude','longitude')
 
 
-class AddressDetailSerializer(serializers.ModelSerializer):
+class AttributesSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Address_detail
+        model = Attributes
         fields = ('address','property_type','attributes')
 
 

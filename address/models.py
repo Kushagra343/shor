@@ -13,7 +13,7 @@ class Address(models.Model):
     	    verbose_name_plural = 'Addresss'
 	
 
-class Address_detail(models.Model):
+class Attributes(models.Model):
     address = models.ForeignKey(Address)
     property_type = models.CharField(max_length=20)
     attributes = models.CharField(max_length=500) 	 	  	
