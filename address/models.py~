@@ -16,7 +16,7 @@ class Address(models.Model):
 class Address_detail(models.Model):
     address = models.ForeignKey(Address)
     property_type = models.CharField(max_length=20)
-    attributes = models.CharField(max_length=200) 	 	  	
+    attributes = models.CharField(max_length=500) 	 	  	
     def __str__(self):
         return str(self.user)
     class Meta:

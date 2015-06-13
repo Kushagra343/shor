@@ -22,4 +22,4 @@ class Address_detail(models.Model):
     class Meta:
     	    db_table = 'Address_detail'
     	    verbose_name = 'Address_detail'
-    	    verbose_name_plural = 'Address_details'+
+    	    verbose_name_plural = 'Address_details'
