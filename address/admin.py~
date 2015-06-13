@@ -1,11 +1,11 @@
 from django.contrib import admin
 from .models import Address
-from .models import Attributes
+from .models import Address_attributes
 
 
 # Register your models here.
 
 admin.site.register(Address)
-admin.site.register(Attributes)
+admin.site.register(Address_attributes)
 
 
