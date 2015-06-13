@@ -1,14 +1,15 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import mixins
+from rest_framework import generics
 
-from .models import Flat
-from .models import Hostel
-from .models import House
+from .models import Address
+from .models import Address_detail
+#from .models import House
 
-from .serializers import FlatSerializer
-from .serializers import HostelSerializer
-from .serializers import HouseSerializer
+#from .serializers import AddressSerializer
+#from .serializers import AddressDetailSerializer
 
 
 @api_view(['GET','PUT','DELETE'])

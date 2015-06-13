@@ -1,27 +1,20 @@
 from rest_framework import serializers
-from .models import Flat
-from .models import House
-from .models import Hostel
+from .models import Address
+from .models import Address_detail
 
 
-class FlatSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Flat
-        fields = ('user', 'flat_type', 'locality','landmark','pincode','latitude','longitude','name','block','floor','room_num')
-
-
-class HostelSerializer(serializers.ModelSerializer):
+class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Hostel
-        fields = ('user', 'flat_type', 'locality','landmark','pincode','latitude','longitude','name','floor','room_num')
+        model = Address
+        fields = ('address', 'latitude','longitude')
 
 
-class HouseSerializer(serializers.ModelSerializer):
+class AddressDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = House
-        fields = ('user', 'flat_type', 'locality','landmark','pincode','latitude','longitude','name','house_num')
+        model = Address_detail
+        fields = ('address','property_type','attributes')
+
 
 

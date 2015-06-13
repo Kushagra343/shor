@@ -2,13 +2,12 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import Flat
-from .models import Hostel
-from .models import House
+from .models import Address
+from .models import Address_detail
+#from .models import House
 
-from .serializers import FlatSerializer
-from .serializers import HostelSerializer
-from .serializers import HouseSerializer
+#from .serializers import AddressSerializer
+#from .serializers import AddressDetailSerializer
 
 
 @api_view(['GET','PUT','DELETE'])
@@ -38,16 +37,16 @@ def address_detail(request):
 
     elif request.method == 'DELETE':
  	flat_type = request.DATA['flat_type']
-	if flat_type == 'Flat':
-        	address_detail = Flat.objects.get(address=address)
-		address_detail.delete()
-        elif flat_type == 'House':
-        	address_detail = House.objects.get(address=address)
-  		address_detail.delete()
-        elif flat_type == 'Hostel':
-        	address_detail = Hostel.objects.get(address=address)
-		address_detail.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+#	if flat_type == 'Flat':
+ #       	address_detail = Flat.objects.get(address=address)
+#		address_detail.delete()
+ #       elif flat_type == 'House':
+  #      	address_detail = House.objects.get(address=address)
+  #		address_detail.delete()
+   #     elif flat_type == 'Hostel':
+    #    	address_detail = Hostel.objects.get(address=address)
+	#	address_detail.delete()
+        #return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 def serializer_valid(serializer):
