@@ -7,14 +7,11 @@ class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Address
-        fields = ('address', 'latitude','longitude')
+        fields = ('id', 'address', 'latitude', 'longitude')
 
 
 class AttributesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Attributes
-        fields = ('address','key','value')
-
-
-
+        fields = ('id', 'address', 'key', 'value')
