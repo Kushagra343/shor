@@ -7,7 +7,7 @@ class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Address
-        fields = ('id', 'address', 'latitude', 'longitude')
+        fields = ('id', 'address', 'long_position', 'lat_position')
 
 
 class AttributesSerializer(serializers.ModelSerializer):
