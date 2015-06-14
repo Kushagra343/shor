@@ -3,8 +3,8 @@ from django.db import models
 
 class Address(models.Model):
     address = models.CharField(max_length=200)
-    latitude = models.IntegerField() # lat lng can't be integer fields
-    longitude = models.IntegerField()
+    long_position   = models.DecimalField (max_digits=9, decimal_places=6)
+    lat_position   = models.DecimalField (max_digits=9, decimal_places=6)
     def __str__(self):
         return str(self.id)
     class Meta:
