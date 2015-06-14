@@ -17,14 +17,9 @@ class AddressList(generics.ListCreateAPIView):
     serializer_class = AddressSerializer
 
     def perform_create(self, serializer):
-        if not is_object_exist(instance.address):   
-            instance = serializer.save()
+        instance = serializer.save()
         coordinate_details(instance)        
 
-    def is_object_exist(address):
-        if Address.objects.filter(address=address).count():
-            return True
-        return False
 
 
 class AddressListDetail(generics.RetrieveUpdateDestroyAPIView):
