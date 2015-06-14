@@ -24,7 +24,8 @@ urlpatterns = [
     # User management
     url(r'^users/', include("shor.users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
-
+    # Address module
+    url(r'^address/', include('address.urls')),	
     # Your stuff: custom urls includes go here
 
     url(r'^api/', include(router.urls)),

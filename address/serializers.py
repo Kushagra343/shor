@@ -14,7 +14,7 @@ class AttributesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Attributes
-        fields = ('address','property_type','attributes')
+        fields = ('address','key','value')
 
 
 
