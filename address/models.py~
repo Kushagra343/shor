@@ -6,7 +6,7 @@ class Address(models.Model):
     latitude = models.IntegerField()
     longitude = models.IntegerField()
     def __str__(self):
-        return str(self.user)
+        return str(self.id)
     class Meta:
     	    db_table = 'Address'
     	    verbose_name = 'Address'
@@ -16,9 +16,9 @@ class Address(models.Model):
 class Address_attributes(models.Model):
     address = models.ForeignKey(Address)
     property_type = models.CharField(max_length=20)
-    attributes = models.CharField(max_length=500) 	 	  	
+    value = models.CharField(max_length=20) 	 	  	
     def __str__(self):
-        return str(self.user)
+        return str(self.id)
     class Meta:
     	    db_table = 'Address_detail'
     	    verbose_name = 'Address_detail'

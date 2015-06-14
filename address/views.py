@@ -1,10 +1,10 @@
 from rest_framework import generics
 
 from .models import Address
-from .models import Address_attributes
+from .models import Attributes
 
 from .serializers import AddressSerializer
-from .serializers import AddressDetailSerializer
+from .serializers import AttributesSerializer
 
 class AddressList(generics.ListCreateAPIView):
 	queryset = Address.objects.all()
