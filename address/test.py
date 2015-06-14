@@ -25,8 +25,6 @@ class AddressTestCase(APITestCase):
 
     def test_get_address(self):
         response = self.client.post(self.url, self.data, format='json')
-        print "from get_addr"
-        print response.data
         request = self.client.get('/address/address/3/')
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
@@ -36,7 +34,5 @@ class AddressTestCase(APITestCase):
 
     def test_delete_address(self):
         response = self.client.post(self.url, self.data, format='json')
-        print "from delete addrs"
-        print response.data
         response = self.client.delete('/address/address/2/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
