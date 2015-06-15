@@ -34,7 +34,7 @@ class AddressTestCase(APITestCase):
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
     def test_get_address_list(self):
-        request = self.client.get('/address/address/')
+        request = self.client.get(address_url)
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
     def test_delete_address(self):
