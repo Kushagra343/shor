@@ -6,20 +6,16 @@ from .models import Attributes
 from .serializers import AddressSerializer
 from .serializers import AttributesSerializer
 
-from .helpers import coordinate_details
+from .helpers import attribute_details
 
 class AddressList(generics.ListCreateAPIView):
-    """
-        curl -H 'Content-Type: application/json' -X PUT -d
-        '{"address":"asdasdasd","latitude": 24,"longitude": 25}' http://127.0.0.1:8000/address/address/
-    """
     queryset = Address.objects.all()
     serializer_class = AddressSerializer
 
     def perform_create(self, serializer):
         instance = serializer.save()
-        coordinate_details(instance)        
-
+        for i in attribute_details(instance):
+            Attributes.objects.create(address=instance,key=i['types'][0],value=i['long_name'])
 
 
 class AddressListDetail(generics.RetrieveUpdateDestroyAPIView):
